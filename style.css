@@ -1,98 +1,256 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* ==============================
+   ESTILO GERAL
+============================== */
+:root {
+  --bg-light: #f7f7f8;
+  --text-light: #1a1a1a;
+  --accent-light: #ffb703;
+  --card-light: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+
+  --bg-dark: #0e0e10;
+  --text-dark: #f7f7f8;
+  --accent-dark: #f4a261;
+  --card-dark: #1a1a1a;
+  --shadow-dark: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem 0;
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
-header {
-    background-color: #1e1e2f;
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
+/* ==============================
+   ELEMENTOS GERAIS
+============================== */
+header, section, footer {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
 }
 
-header h1 {
-    font-size: 2rem;
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-header p {
-    margin-top: 0.5rem;
-    font-weight: 400;
+.highlight {
+  color: var(--accent-light);
 }
 
-.contact a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 0.5rem;
+body.dark-mode .highlight {
+  color: var(--accent-dark);
 }
 
-section {
-    padding: 3rem 0;
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #1e1e2f;
+/* ==============================
+   BOTÃO DE TEMA
+============================== */
+#theme-toggle {
+  background-color: var(--accent-light);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  margin-top: 15px;
 }
 
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    gap: 0.5rem;
+#theme-toggle:hover {
+  transform: scale(1.05);
+  background-color: #ff9800;
 }
 
-.skills-list li {
-    background-color: #1e1e2f;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+body.dark-mode #theme-toggle {
+  background-color: var(--accent-dark);
 }
 
-.project {
-    background-color: #fff;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+/* ==============================
+   SEÇÃO DE PROJETOS
+============================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
-.project a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #1e1e2f;
-    text-decoration: none;
-    font-weight: bold;
+.project-card {
+  background: var(--card-light);
+  box-shadow: 0 4px 10px var(--shadow-light);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+body.dark-mode .project-card {
+  background: var(--card-dark);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.project-card img:hover {
+  transform: scale(1.03);
+}
+
+/* ==============================
+   FILTROS
+============================== */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  background: none;
+  border: 2px solid var(--accent-light);
+  color: var(--accent-light);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filters button:hover {
+  background: var(--accent-light);
+  color: #fff;
+}
+
+body.dark-mode .filters button {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+}
+
+body.dark-mode .filters button:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+/* ==============================
+   CONTATO
+============================== */
+.contact-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#copy-email {
+  background-color: var(--accent-light);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#copy-email:hover {
+  background-color: #ff9800;
+  transform: scale(1.05);
+}
+
+body.dark-mode #copy-email {
+  background-color: var(--accent-dark);
+}
+
+/* ==============================
+   BOTÃO VOLTAR AO TOPO
+============================== */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+  background-color: var(--accent-light);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.1);
+  background-color: #ff9800;
+}
+
+body.dark-mode #scrollTopBtn {
+  background-color: var(--accent-dark);
+}
+
+/* ==============================
+   ANIMAÇÕES DE REVEAL
+============================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   FOOTER
+============================== */
 footer {
-    background-color: #1e1e2f;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 50px;
 }
 
-@media(max-width: 768px){
-    .skills-list {
-        flex-direction: column;
-        align-items: center;
-    }
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+@media (max-width: 768px) {
+  header, section {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
 }
