@@ -1,102 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Marina Bulhosa</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio - Marina Bulhosa</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Marina da Cruz Bento Bulhosa</h1>
-            <p>Graduanda em Ciência da Computação | Web & Mobile Developer</p>
-            <div class="contact">
-                <a href="mailto:marinabulhosa@id.uff.br">marinabulhosa@id.uff.br</a>
-                <span>|</span>
-                <a href="https://www.linkedin.com/in/marina-bulhosa-dev" target="_blank">LinkedIn</a>
-                <span>|</span>
-                <a href="https://github.com/marinabulhosa-dev" target="_blank">GitHub</a>
-            </div>
-        </div>
-    </header>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1 data-reveal>👋 Olá, sou <span class="highlight">Marina Bulhosa</span></h1>
+    <p data-reveal>Desenvolvedora Front-End e Analista em formação</p>
 
-    <section id="about">
-        <div class="container">
-            <h2>Sobre Mim</h2>
-            <p>Graduanda em Ciência da Computação pela UFF, apaixonada por tecnologia, inovação e desenvolvimento de software. Focada em resolver problemas reais, criar soluções escaláveis e aplicar conhecimento em projetos Web e Mobile que gerem impacto positivo.</p>
-        </div>
-    </section>
+    <!-- Botão para alternar entre tema claro/escuro -->
+    <button id="theme-toggle">🌙 Alternar Tema</button>
+  </header>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Habilidades</h2>
-            <ul class="skills-list">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Angular</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>SQL / MySQL</li>
-                <li>Git / GitHub</li>
-                <li>UX/UI & Design Responsivo</li>
-                <li>APIs</li>
-                <li>Power BI</li>
-                <li>WordPress</li>
-                <li>Canva & Metricool</li>
-                <li>Automação Digital & Inteligências Artificiais</li>
-            </ul>
-        </div>
-    </section>
+  <!-- ================= SEÇÃO SOBRE ================= -->
+  <section id="sobre">
+    <h2 data-reveal>Sobre mim</h2>
+    <p data-reveal>
+      Sou graduanda em Ciência da Computação pela UFF e apaixonada por tecnologia, 
+      inovação e design. Tenho experiência em desenvolvimento front-end, bancos de dados e UX/UI.
+    </p>
+  </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Projetos</h2>
-            <div class="project">
-                <h3>PetFriends - App Web/Mobile</h3>
-                <p>Aplicativo para tutores de pets, com funcionalidades de cadastro, histórico e recomendações personalizadas.</p>
-                <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript, React, APIs</p>
-                <a href="link_do_repositorio" target="_blank">Ver Repositório</a>
-            </div>
+  <!-- ================= SEÇÃO DE PROJETOS ================= -->
+  <section id="projetos">
+    <h2 data-reveal>Projetos</h2>
 
-            <div class="project">
-                <h3>21 Dias de Ativismo Contra o Racismo - Site</h3>
-                <p>Manutenção de site WordPress, criação de conteúdo multimídia e suporte técnico em transmissões ao vivo.</p>
-                <p><strong>Tecnologias:</strong> WordPress, Canva, Metricool</p>
-                <a href="link_do_repositorio" target="_blank">Ver Repositório</a>
-            </div>
+    <!-- Filtros -->
+    <div class="filters">
+      <button data-filter="*">Todos</button>
+      <button data-filter="web">Web</button>
+      <button data-filter="mobile">Mobile</button>
+      <button data-filter="design">Design</button>
+    </div>
 
-            <div class="project">
-                <h3>Projetos Pessoais Web/Mobile</h3>
-                <p>Protótipos responsivos, dashboards interativos e integração com APIs, com foco em UX/UI e performance.</p>
-                <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript, Python, SQL</p>
-                <a href="link_do_repositorio" target="_blank">Ver Repositório</a>
-            </div>
-        </div>
-    </section>
+    <!-- Grid de projetos -->
+    <div class="projects-grid">
+      <div class="project-card" data-tags="web" data-reveal>
+        <img src="img/projeto1.jpg" alt="Projeto Web" data-lightbox />
+        <h3>Landing Page Responsiva</h3>
+        <p>Site institucional feito com HTML, CSS e JS.</p>
+      </div>
 
-    <section id="certifications">
-        <div class="container">
-            <h2>Certificações & Cursos</h2>
-            <ul>
-                <li>Curso de Programação – Onbyte (HTML, CSS, JS, Java, Python, Programador Mobile, Java Web)</li>
-                <li>PULE – Programa de Universalização em Línguas Estrangeiras (Inglês – 270h)</li>
-                <li>UI/UX Design e Design Responsivo</li>
-                <li>Git & GitHub – versionamento e colaboração</li>
-                <li>Power BI, Metricool e Canva – análise, automação e criação de conteúdo digital</li>
-            </ul>
-        </div>
-    </section>
+      <div class="project-card" data-tags="mobile" data-reveal>
+        <img src="img/projeto2.jpg" alt="App Mobile" data-lightbox />
+        <h3>Aplicativo Educativo</h3>
+        <p>Desenvolvido com Xojo e integração com banco de dados.</p>
+      </div>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Marina da Cruz Bento Bulhosa | Desenvolvido com HTML, CSS e JavaScript</p>
-        </div>
-    </footer>
-    
-    <script src="script.js"></script>
+      <div class="project-card" data-tags="design" data-reveal>
+        <img src="img/projeto3.jpg" alt="Design UI" data-lightbox />
+        <h3>UI para Dashboard de Dados</h3>
+        <p>Protótipo criado no Figma com foco em UX/UI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO CONTATO ================= -->
+  <section id="contato">
+    <h2 data-reveal>Contato</h2>
+    <p>Quer conversar ou colaborar em um projeto?</p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <span id="email-text">marinabulhosa@id.uff.br</span></p>
+      <button id="copy-email">📋 Copiar E-mail</button>
+    </div>
+  </section>
+
+  <!-- ================= BOTÃO VOLTAR AO TOPO ================= -->
+  <button id="scrollTopBtn" title="Voltar ao topo">⬆</button>
+
+  <!-- ================= FOOTER ================= -->
+  <footer data-reveal>
+    <p>© 2025 - Desenvolvido por Marina Bulhosa</p>
+  </footer>
 </body>
 </html>
